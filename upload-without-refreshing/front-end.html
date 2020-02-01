@@ -1,0 +1,35 @@
+<html>
+
+<center>
+<h2>Submit Data Without Reloading (JS, PHP)</h2>
+
+<input type='text' id='q' placeholder='Write Something...'>
+<br>
+<button id='submit' onclick='submitText(q.value)'>Submit Text</button>
+<div id='responsefield'>
+
+</div>
+
+<script>
+
+function submitText(q){
+
+    var url = 'back-end.php?'+q;
+    
+    var xhr = new XMLHttpRequest();
+    
+    xhr.open('GET', url, false);
+    
+    xhr.send();
+
+    var response = xhr.response;
+
+    responsefield.innerHTML = response;
+
+
+}
+
+</script>
+</center>
+
+</html>
